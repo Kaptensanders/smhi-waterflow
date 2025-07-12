@@ -1,0 +1,3 @@
+[submodule "waterflow-card"]
+	path = waterflow-card
+	url = https://github.com/Kaptensanders/waterflow-card.git
