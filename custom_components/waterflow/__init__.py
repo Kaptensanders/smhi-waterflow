@@ -1,9 +1,24 @@
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.typing import ConfigType
+import voluptuous as vol
+from homeassistant.helpers import config_validation as cv
 
-from .const import DOMAIN
+DOMAIN = "waterflow"
 
+CONFIG_SCHEMA = vol.Schema(
+    {
+        DOMAIN: vol.Schema(
+            {
+                vol.Required("name"): str,
+                vol.Required("subid"): cv.positive_int,
+                vol.Required("x"): vol.Coerce(float),
+                vol.Required("y"): vol.Coerce(float),
+            }
+        )
+    },
+    extra=vol.ALLOW_EXTRA,
+)
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     if DOMAIN in config:
@@ -12,6 +27,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
                 DOMAIN, context={"source": "import"}, data=config[DOMAIN]
             )
         )
+        
     return True
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

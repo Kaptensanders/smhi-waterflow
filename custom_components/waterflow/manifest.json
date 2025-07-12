@@ -1,8 +1,8 @@
 {
     "domain": "waterflow",
     "name": "Waterflow",
-    "config_flow": true,
     "codeowners": ["@kaptensanders"],
+    "config_flow": true,
     "dependencies": [],
     "documentation": "https://github.com/Kaptensanders/waterflow",
     "integration_type": "service",
