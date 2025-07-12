@@ -1,0 +1,48 @@
+{
+  "name": "waterflow-dev",
+  "image": "hass_dev_image_2025.7.0",
+  "postCreateCommand": "container setup-project",
+  "containerEnv": {},
+  "forwardPorts": [5678],
+  "appPort": ["8123:8123"],
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/waterflow",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/waterflow,type=bind",
+  "mounts": [
+     "source=${localWorkspaceFolder}/waterflow-card,target=/home/vscode/ha_config/www/waterflow-card,type=bind"
+  ],
+  "runArgs": [
+    "--name", "hass-waterflow-dev",
+    "--env-file",".devcontainer/container.env"
+  ],
+  "customizations":{
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/ha_core/venv/bin/python",
+        "python.analysis.extraPaths": [
+          "/workspaces/ha_core",
+          "/workspaces/ha_core/venv/lib/python3.13/site-packages"
+        ],
+        "files.exclude": {
+          "**/.git": true,
+          "**/.svn": true,
+          "**/.hg": true,
+          "**/CVS": true,
+          "**/.DS_Store": true,
+          "**/Thumbs.db": true,
+          "**/__pycache__": true
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "esbenp.prettier-vscode",
+        "ms-python.debugpy",
+        "charliermarsh.ruff",
+        "dbaeumer.vscode-eslint",
+        "ms-python.autopep8",
+        "kodu-ai.claude-dev-experimental"
+      ]
+    }
+  }
+}

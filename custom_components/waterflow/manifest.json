@@ -1,0 +1,13 @@
+{
+    "domain": "waterflow",
+    "name": "Waterflow",
+    "config_flow": true,
+    "codeowners": ["@kaptensanders"],
+    "dependencies": [],
+    "documentation": "https://github.com/Kaptensanders/waterflow",
+    "integration_type": "service",
+    "iot_class": "cloud_polling",
+    "issue_tracker": "https://github.com/Kaptensanders/waterflow/issues",
+    "requirements": ["pandas>=2.0.0"],
+    "version": "1.0.0"
+}

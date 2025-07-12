@@ -1,0 +1,17 @@
+{
+	"folders": [
+
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/vscode/ha_core"
+		},
+		{
+			"path": "/home/vscode/ha_config"
+		}
+	],
+	"settings": {
+
+	}
+}

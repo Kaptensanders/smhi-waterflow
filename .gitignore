@@ -1,0 +1,11 @@
+__pycache__/
+.homeassistant/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.db
+*.sqlite
+*.log
+tests/test_outputs/
