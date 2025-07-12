@@ -6,7 +6,7 @@ echo "--- begin project specific setup for Warerflow --"
 # Add project specific setup directives to this file
 # It will be called by "container setup-project" (see devcontainer.json postCreateCommand)
 
-#add_ha_resource /local/waterflow-card/skolmat-card.js
+#add_ha_resource /local/waterflow-card/waterflow-card.js
 
 # link lovelace panel for the waterflow-card (sub module repo)
 echo "Linking $WORKSPACE_DIR/waterflow-card/lovelace-panel.yaml to $HA_CONFIG_DIR/panel.yaml"
@@ -14,3 +14,8 @@ ln -sf $WORKSPACE_DIR/waterflow-card/lovelace-panel.yaml $HA_CONFIG_DIR/panel.ya
 
 
 pip install pytest pytest-asyncio httpx pydantic pandas
+
+# frontend dependencies
+cd /workspaces/waterflow/waterflow-card  # Adjust path if needed
+npm install
+

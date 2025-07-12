@@ -24,7 +24,7 @@
       "pathMappings": [
         {
           "localRoot": "${workspaceFolder}/custom_components/waterflow",
-          "remoteRoot": "/workspaces/skolmat/custom_components/waterflow"
+          "remoteRoot": "/workspaces/waterflow/custom_components/waterflow"
         },
         {
           "localRoot": "${workspaceFolder}",

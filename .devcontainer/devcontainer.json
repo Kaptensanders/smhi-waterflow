@@ -44,5 +44,10 @@
         "kodu-ai.claude-dev-experimental"
       ]
     }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
   }
 }
