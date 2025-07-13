@@ -12,6 +12,7 @@
 		}
 	],
 	"settings": {
+		"workbench.editor.enablePreview": false
 
 	}
 }

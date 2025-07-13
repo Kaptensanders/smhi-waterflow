@@ -6,7 +6,7 @@ echo "--- begin project specific setup for Warerflow --"
 # Add project specific setup directives to this file
 # It will be called by "container setup-project" (see devcontainer.json postCreateCommand)
 
-#add_ha_resource /local/waterflow-card/waterflow-card.js
+add_ha_resource /local/waterflow-card/dist/waterflow-card.js
 
 # link lovelace panel for the waterflow-card (sub module repo)
 echo "Linking $WORKSPACE_DIR/waterflow-card/lovelace-panel.yaml to $HA_CONFIG_DIR/panel.yaml"

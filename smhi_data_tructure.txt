@@ -1,103 +1,49 @@
-{
-    "subid": 14054,
-    "background":[ # historical waterflow data 1991-2022
-        # list of 365 days, representing a year
-        [
-            <first day timestamp (here Sat-04-Jan-2025)>,
-            [
-                <waterflow rate for same day year 2022>,
-                <waterflow rate for year day year 2021>,
-                <waterflow rate for year day year 2020>,
-                ...,
-                <waterflow rate for year 1991>
-            ]
-        ],
-        [
-            <second day timestamp (here Sun-05-Jan-2025)>,
-            [
-                <waterflow rate for same day year 2022>,
-                <waterflow rate for year day year 2021>,
-                <waterflow rate for year day year 2020>,
-                ...,
-                <waterflow rate for year 1991>
-            ],
-        ],
-        [...],
-        [...],
-        [...],
-    ],
-    "mq": 13.60904313288337, # average over all years 1991-2022
-    "mlq": 0.5607077946874999, # average over all years 1991-2022
-    "mhq": 111.52474506249999, # average over all years 1991-2022
-    "coutHindcast": {
-        data: [ # list of hindcast day entries
-            [
-                <timestamp>,
-                <waterflow rate>
-            ],
-            [...],
-            [...]
-        ]
-    },
-    "coutForecast": {
-        data: [ # list of forecast day entries
-            [
-                <timestamp>,
-                <waterflow rate>
-            ],
-            [...],
-            [...]
-        ]
-    },
-    "psimHindcast": {
-        data: [ # list of hindcast day entries
-            [
-                <timestamp>,
-                <precipitation>
-            ],
-            [...],
-            [...]
-        ]
-    },
-    "psimForecast": {
-        data: [ # list of forecast day entries
-            [
-                <timestamp>,
-                <precipitation>
-            ],
-            [...],
-            [...]
-        ]
-    },
-    "scaleticks": [ # list of lables for x-axis when showing whole year in graph
-        [ # February -> displays "1/2" as label
-            1738368000000,
-            "1/2"
-        ],
-        [ # March -> displays "1/3" as label
-            1740787200000,
-            "1/3"
-        ],
-        [...]
+Waterflow integration entities, data models
+With name as configured, the following entities are created
+
+sensor.<name>_info - Overall information entity
+State value:  <Not applicable>
+Attributes: {
+    mq: <float>,  # waterflow in m3
+    mlq: <float>, # waterflow in m3
+    mhq: <float>  # waterflow in m3
+}
+
+sensor.<name>_waterflow - hindcast and forecast data for waterlevels from current date
+State value:  <Not applicable>
+Attributes: {
+    startindex: <int>, # index of firstdate in 365 day calendar discarding leap years. Representing start date of data series
+    firstdate: "2025-06-13T00:00:00", 
+    lastdate: "2025-07-22T00:00:00"
+    data:[  # list of waterflow values in m3, starting at firstdate (=startindex in 356 day calendar)
+        <float>,
+        <float>,
+        ...
     ]
 }
 
-Convert into:
-
-"waterflow_history": {
-    "history": {
-        2022: [list of 365 entries],
-        2021: [list of 365 entries],
-        2020: [list of 365 entries],
-        ....
-        1991: [list of 365 entries]
-    }
-    "average": [list of 365 entries], # average over all years 1991-2022,
-    "max": [list of 365 entries], # maximum over all years 1991-2022
-    "min": [list of 365 entries] # minimum over all years 1991-2022
+sensor.<name>_precipitation - hindcast and forecast data for precipitation from current date
+State value:  <Not applicable>
+Attributes: {
+    startindex: <int>, # index of firstdate in 365 day calendar discarding leap years. Representing start date of data series
+    firstdate: "2025-06-13T00:00:00", 
+    lastdate: "2025-07-22T00:00:00"
+    data:[  # list of precipitation values in mm, starting at firstdate (=startindex in 356 day calendar)
+        <float>,
+        <float>,
+        ...
+    ]
 }
 
-waterflow/precipitation: {
-    "startdate": <timestamp>, # start date of the data
-    "data": [list of merged entries from coutHindcast and coutForecast],    
+sensor.<name>_waterflow_history - historical data in 365 day calendar format
+State value:  <Not applicable>
+Attributes: {
+    history: { 
+        "<1991>" : [<float>,<float>,...], # 365 entries, waterflow levels in m3 for 1991
+        ...,                              # 1992-2021
+        "<2022>" : [<float>,<float>,...], # 365 entries, waterflow levels in m3 for 2022
+    },
+    average: [<float>,<float>,...], # 365 entries, average waterflow level in m3 for 1991-2022
+    min: [<float>,<float>,...], # 365 entries, min waterflow level in m3 for 1991-2022
+    max: [<float>,<float>,...], # 365 entries, max waterflow level in m3 for 1991-2022
 }
