@@ -2,7 +2,7 @@ mode: storage
 dashboards:
   lovelace-padpanel:
     mode: yaml
-    title: Waterflow
+    title: SMHI Waterflow
     icon: mdi:home
     show_in_sidebar: true
     filename: panel.yaml

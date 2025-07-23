@@ -4,8 +4,8 @@ import json
 import copy
 from datetime import datetime
 from pathlib import Path
-from custom_components.waterflow.core.client import SMHIClient
-from custom_components.waterflow.core.processor import SMHIProcessor
+from custom_components.smhi_waterflow.core.client import SMHIClient
+from custom_components.smhi_waterflow.core.processor import SMHIProcessor
 
 def convert_datetime_to_timestamp(obj):
     """Convert datetime objects to timestamps (milliseconds since epoch) for JSON serialization."""

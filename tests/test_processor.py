@@ -1,6 +1,6 @@
 import pandas as pd
 from datetime import datetime
-from custom_components.waterflow.core.processor import SMHIProcessor
+from custom_components.smhi_waterflow.core.processor import SMHIProcessor
 import pytest
 
 def generate_leap_year_background():

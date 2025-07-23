@@ -3,7 +3,7 @@ import logging
 import asyncio
 from typing import Dict, Any, Optional
 
-from custom_components.waterflow.const import (
+from custom_components.smhi_waterflow.const import (
     USER_AGENT,
     DEFAULT_TIMEOUT,
     MAX_RETRIES,

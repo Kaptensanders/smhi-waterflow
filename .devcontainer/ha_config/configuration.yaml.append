@@ -3,7 +3,7 @@
 sensor: !include sensors.yaml
 lovelace: !include lovelace.yaml
 
-waterflow:
+smhi-waterflow:
   name: "Ljordalen"
   x: "374751.999939161"
   y: "6795215.999998116"

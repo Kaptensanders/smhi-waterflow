@@ -4,7 +4,7 @@ from homeassistant.helpers.typing import ConfigType
 import voluptuous as vol
 from homeassistant.helpers import config_validation as cv
 
-DOMAIN = "waterflow"
+DOMAIN = "smhi-waterflow"
 
 CONFIG_SCHEMA = vol.Schema(
     {

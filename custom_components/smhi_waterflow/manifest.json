@@ -1,13 +1,13 @@
 {
-    "domain": "waterflow",
-    "name": "Waterflow",
+    "domain": "smhi-waterflow",
+    "name": "SMHI Waterflow",
     "codeowners": ["@kaptensanders"],
     "config_flow": true,
     "dependencies": [],
-    "documentation": "https://github.com/Kaptensanders/waterflow",
+    "documentation": "https://github.com/Kaptensanders/smhi-waterflow",
     "integration_type": "service",
     "iot_class": "cloud_polling",
-    "issue_tracker": "https://github.com/Kaptensanders/waterflow/issues",
+    "issue_tracker": "https://github.com/Kaptensanders/smhi-waterflow/issues",
     "requirements": ["pandas>=2.0.0"],
     "version": "1.0.0"
 }

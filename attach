@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it hass-waterflow-dev /bin/bash
+docker exec -it hass-smhi-waterflow-dev /bin/bash

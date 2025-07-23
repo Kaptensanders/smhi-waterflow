@@ -2,17 +2,17 @@ import pytest
 import aiohttp
 import asyncio
 from unittest.mock import patch, MagicMock
-from custom_components.waterflow.core.client import SMHIClient
+from custom_components.smhi_waterflow.core.client import SMHIClient
 
 # Mock constants to avoid dependency on const.py during tests
 @pytest.fixture(autouse=True)
 def mock_constants(monkeypatch):
     """Mock constants from const.py for testing."""
     monkeypatch.setattr(SMHIClient, "BASE_URL", "https://test.example.com/")
-    monkeypatch.setattr("custom_components.waterflow.core.client.USER_AGENT", "Test User Agent")
-    monkeypatch.setattr("custom_components.waterflow.core.client.DEFAULT_TIMEOUT", 10)
-    monkeypatch.setattr("custom_components.waterflow.core.client.MAX_RETRIES", 2)
-    monkeypatch.setattr("custom_components.waterflow.core.client.RETRY_DELAY", 1)
+    monkeypatch.setattr("custom_components.smhi_waterflow.core.client.USER_AGENT", "Test User Agent")
+    monkeypatch.setattr("custom_components.smhi_waterflow.core.client.DEFAULT_TIMEOUT", 10)
+    monkeypatch.setattr("custom_components.smhi_waterflow.core.client.MAX_RETRIES", 2)
+    monkeypatch.setattr("custom_components.smhi_waterflow.core.client.RETRY_DELAY", 1)
 
 @pytest.mark.asyncio
 async def test_fetch_data_success(monkeypatch):

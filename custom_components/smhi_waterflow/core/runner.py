@@ -3,7 +3,7 @@ import argparse
 import logging
 import json
 import aiohttp
-from custom_components.waterflow.core.processor import SMHIProcessor
+from custom_components.smhi_waterflow.core.processor import SMHIProcessor
 
 class StandaloneSMHIClient:
     BASE_URL = "https://vattenwebb.smhi.se/hydronu/"
@@ -11,7 +11,7 @@ class StandaloneSMHIClient:
     def __init__(self, logger=None):
         self.logger = logger or logging.getLogger(__name__)
         self.headers = {
-            "User-Agent": "Mozilla/5.0 (compatible; WaterflowIntegration/1.0; +https://github.com/your-repo)"
+            "User-Agent": "Mozilla/5.0 (compatible; SMHIWaterflowIntegration/1.0; +https://github.com/your-repo)"
         }
 
     async def fetch_data(self, subid: str, x: str, y: str) -> dict:

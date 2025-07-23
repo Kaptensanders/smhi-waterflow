@@ -5,7 +5,7 @@ from homeassistant.config_entries import ConfigEntry
 from .core.client import SMHIClient
 from .core.processor import SMHIProcessor
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from .const import COORDINATOR_NAME, SCAN_INTERVAL
+from .const import SCAN_INTERVAL
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -15,7 +15,7 @@ class WaterflowCoordinator(DataUpdateCoordinator):
         super().__init__(
             hass,
             _LOGGER,
-            name=COORDINATOR_NAME,
+            name="SMHI Waterflow Data",
             update_interval=SCAN_INTERVAL,
         )
         self.hass = hass

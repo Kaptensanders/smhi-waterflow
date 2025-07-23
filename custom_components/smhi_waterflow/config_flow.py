@@ -42,7 +42,7 @@ class WaterflowConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         self._abort_if_unique_id_configured()
         
         # Create the config entry with the name as the title
-        title = f"Waterflow {unique_id}"
+        title = f"SMHI Waterflow {unique_id}"
         return self.async_create_entry(title=title, data=user_input)
 
     def _get_schema(self):

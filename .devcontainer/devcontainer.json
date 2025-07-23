@@ -1,18 +1,18 @@
 {
-  "name": "waterflow-dev",
+  "name": "smhi-waterflow-dev",
   "image": "hass_dev_image_2025.7.0",
   "postCreateCommand": "container setup-project",
   "containerEnv": {},
   "forwardPorts": [5678],
   "appPort": ["8123:8123"],
   "remoteUser": "vscode",
-  "workspaceFolder": "/workspaces/waterflow",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/waterflow,type=bind",
+  "workspaceFolder": "/workspaces/smhi-waterflow",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/smhi-waterflow,type=bind",
   "mounts": [
-     "source=${localWorkspaceFolder}/waterflow-card,target=/home/vscode/ha_config/www/waterflow-card,type=bind"
+     "source=${localWorkspaceFolder}/smhi-waterflow-card,target=/home/vscode/ha_config/www/smhi-waterflow-card,type=bind"
   ],
   "runArgs": [
-    "--name", "hass-waterflow-dev",
+    "--name", "hass-smhi-waterflow-dev",
     "--env-file",".devcontainer/container.env"
   ],
   "customizations":{
