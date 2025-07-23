@@ -26,9 +26,7 @@ class WaterflowCoordinator(DataUpdateCoordinator):
         session = async_get_clientsession(self.hass)
         client = SMHIClient(session, _LOGGER)
         data = await client.fetch_data(
-            self.entry.data["subid"],
-            self.entry.data["x"],
-            self.entry.data["y"]
+            self.entry.data["subid"]
         )
 
         processor = SMHIProcessor()

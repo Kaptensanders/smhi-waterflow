@@ -1,0 +1,5 @@
+{
+    "name": "SMHI Waterflow Integration",
+    "country": ["SE", "NO", "FI"],
+    "homeassistant": "2024.10.0"
+  }

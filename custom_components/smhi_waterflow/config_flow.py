@@ -52,7 +52,5 @@ class WaterflowConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         return vol.Schema({
             vol.Required("name"): str,
-            vol.Required("x"): vol.Coerce(float),
-            vol.Required("y"): vol.Coerce(float),
             vol.Required("subid"): cv.positive_int,
         })

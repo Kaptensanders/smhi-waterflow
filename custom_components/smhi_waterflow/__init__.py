@@ -4,16 +4,14 @@ from homeassistant.helpers.typing import ConfigType
 import voluptuous as vol
 from homeassistant.helpers import config_validation as cv
 
-DOMAIN = "smhi-waterflow"
+DOMAIN = "smhi_waterflow"
 
 CONFIG_SCHEMA = vol.Schema(
     {
         DOMAIN: vol.Schema(
             {
                 vol.Required("name"): str,
-                vol.Required("subid"): cv.positive_int,
-                vol.Required("x"): vol.Coerce(float),
-                vol.Required("y"): vol.Coerce(float),
+                vol.Required("subid"): cv.positive_int
             }
         )
     },

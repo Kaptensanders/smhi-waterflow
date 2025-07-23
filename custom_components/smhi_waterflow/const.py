@@ -2,7 +2,7 @@
 from datetime import timedelta
 
 # Integration
-DOMAIN = "smhi-waterflow"
+DOMAIN = "smhi_waterflow"
 SCAN_INTERVAL = timedelta(hours=6)
 
 # API Client Settings

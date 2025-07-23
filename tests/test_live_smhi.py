@@ -22,12 +22,10 @@ def convert_datetime_to_timestamp(obj):
 async def test_live_smhi_fetch_and_process():
     """Live E2E test: Fetch real SMHI data, save responses, process, and verify."""
     subid = "14054"
-    x = "374751.999939161"
-    y = "6795215.999998116"
 
     async with aiohttp.ClientSession() as session:
         client = SMHIClient(session)
-        result = await client.fetch_data(subid, x, y)
+        result = await client.fetch_data(subid)
 
     processor = SMHIProcessor()
     processed = processor.process_data(result["chart_data"])
@@ -37,7 +35,6 @@ async def test_live_smhi_fetch_and_process():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Save outputs
-    (output_dir / "region_data.json").write_text(json.dumps(result["point_data"], indent=2), encoding="utf-8")
     (output_dir / "chart_data.json").write_text(json.dumps(result["chart_data"], indent=2), encoding="utf-8")
     
     # Convert datetime objects to timestamps for JSON serialization

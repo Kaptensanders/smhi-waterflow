@@ -1,5 +1,5 @@
 {
-    "domain": "smhi-waterflow",
+    "domain": "smhi_waterflow",
     "name": "SMHI Waterflow",
     "codeowners": ["@kaptensanders"],
     "config_flow": true,
