@@ -66,8 +66,7 @@ The data is updated every 6 hours.
 
 ## Lovelace Card
 
-This integration includes a companion Lovelace card for visualizing the waterflow data. For installation and configuration instructions, please see the [card's README](./smhi-waterflow-card/README.md).
-
+There is a companion Lovelace card for visualizing the waterflow data.
 Find it at https://github.com/Kaptensanders/smhi-waterflow-card
 
 ## Troubleshooting
